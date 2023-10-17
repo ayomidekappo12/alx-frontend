@@ -3,7 +3,6 @@
 /* Document
    ========================================================================== */
 
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -315,6 +314,7 @@ template {
 }
 /*# sourceMappingURL=normalize.min.css.map */
 
+
 :root {
   --color-primary: #d73953;
   --color-black: #090909;
@@ -345,10 +345,12 @@ template {
   --section-body-padding: 0 0 3rem;
   --section-footer-padding: 3rem 0 0;
   --section-footer-align: center;
-  footer-padding: 5rem 0 1rem;
+  --footer-padding: 5rem 0 1rem;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -394,8 +396,8 @@ a:active {
 }
 
 .section-header {
-  padding: var(--section-header-padding);
   text-align: var(--section-header-align);
+  padding: var(--section-header-padding);
 }
 
 .section-body {
@@ -420,16 +422,16 @@ a:active {
   color: var(--section-title-color);
 }
 
-.container {
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .section-tagline {
   font-family: var(--font-family-title);
   text-transform: var(--section-tagline-transform);
   font-weight: var(--font-weight-bold);
+}
+
+.container {
+  width: 960px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 h1,
