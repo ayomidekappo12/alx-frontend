@@ -354,15 +354,6 @@ template {
   --nav-item-margin:  0 0 3rem;
   --nav-item-link-hover: var(--color-primary);
   --section-tagline-margin: 0;
-  --button-display: inline-block;
-  --button-padding: 1.5rem 3rem;
-  --button-border: 0.2rem solid var(--color-primary);
-  --button-color: color-black;
-  --button-text-decoration: none;
-  --button-font-size: font-size-large;
-  --button-hover-color: color-white;
-  --button-hover-text-decoration: none;
-  --button-hover-background: color-primary;
 }
 
 *,
@@ -402,28 +393,6 @@ a:hover {
 
 a:active {
   background-color: var(--color-light-grey);
-}
-
-.button {
-  display: var(--button-display);
-  padding: var(--button-padding);
-  border: var(--button-border);
-  font-size: var(--button-font-size);
-  color: var(--button-color);
-  text-decoration: var(--button-text-decoration);
-}
-
-.button:hover {
-  color: var(--button-hover-color);
-  text-decoration: var(--button-hover-text-decoration);
-  background-color: var(--button-hover-background);
-}
-
-[data-section-theme="dark"] {
-  --text-color: var(--color-white);
-  --section-title-color: var(--color-white);
-  background: var(--color-black);
-  --button-color: var(--color-white);
 }
 
 .visually-hidden {
@@ -541,35 +510,69 @@ ul.row {
   text-align: right;
 }
 
+
+/* 
+  **************** Clear the context of the grid ****************
+  CSS rule that creates a new row after each instance of the class row with the following properties:
+*/
+.row::after {
+  content: ""; /*no content*/
+  display: table; /*displayed as a table*/
+  clear: both; /*do not allow any floating elements on either side*/
+}
+
+/* Select all classes that start with col- */
 [class^="col-"] {
   float: left;
-  padding: 0.5rem;
+  padding: 0.5rem; /* half of the root element's padding, adjust as needed */
+}
+
+/* Add a dark theme to sections */
+[data-section-theme="dark"] {
+  --text-color: var(--color-white);
+  --section-title-color: var(--color-white);
+  background: var(--color-black);
 }
 
 .footer-address  {
-  color: var(--text-color);
+    color: var(--text-color);  
 }
 
 .social-link {
-  display: block;
+    display: block;
 }
 
 .social-link > svg {
-  fill: var(--text-color);
+    fill: var(--text-color);
 }
 
 .card-services .card-title {
-  margin: 0;
+    margin: 0;
 }
 
 .card-services a {
-  display: block;
-  padding: 2rem;
-  background-color: var(--color-light-grey);
+    display: block;
+    padding: 2rem;
+    background-color: var(--color-light-grey);
 }
 
 .card-services a:hover {
-  color: var(--color-white);
-  background: var(--color-primary);
-  text-decoration: none;
+    color: var(--color-white);
+    background: var(--color-primary);
+    text-decoration: none;
+}
+
+.button {
+  display: var(--button-display);
+  padding: var(--button-padding);
+  border: var(--button-border);
+  font-size: var(--button-font-size);
+  color: var(--button-color);
+  text-decoration: var(--button-text-decoration);
+}
+
+.button:hover {
+  color: var(--button-hover-color);
+  text-decoration: var(--button-hover-text-decoration);
+  background-color: var(--button-hover-background);
 }
