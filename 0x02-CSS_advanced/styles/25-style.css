@@ -314,7 +314,6 @@ template {
 }
 /*# sourceMappingURL=normalize.min.css.map */
 
-
 :root {
   --color-primary: #d73953;
   --color-black: #090909;
@@ -351,9 +350,18 @@ template {
   --nav-item-font-size: var(--font-size-medium);
   --nav-item-letter-spacing: 0.04rem;
   --nav-item-display: inline-block;
-  --nav-item-margin:  0 0 3rem;
+  --nav-item-margin: 0 0 3rem;
   --nav-item-link-hover: var(--color-primary);
   --section-tagline-margin: 0;
+  --button-display: inline-block;
+  --button-padding: 1.5rem 3rem;
+  --button-border: 0.2rem solid var(--color-primary);
+  --button-color: var(--color-black);
+  --button-text-decoration: none;
+  --button-font-size: var(--font-size-large);
+  --button-hover-color: var(--color-white);
+  --button-hover-text-decoration: none;
+  --button-hover-background: var(--color-primary);
 }
 
 *,
@@ -395,8 +403,75 @@ a:active {
   background-color: var(--color-light-grey);
 }
 
+.button {
+  display: var(--button-display);
+  padding: var(--button-padding);
+  border: var(--button-border);
+  font-size: var(--button-font-size);
+  color: var(--button-color);
+  text-decoration: var(--button-text-decoration);
+}
+
+.button:hover {
+  color: var(--button-hover-color);
+  text-decoration: var(--button-hover-text-decoration);
+  background-color: var(--button-hover-background);
+}
+
+/* Add a dark theme to sections */
+[data-section-theme="dark"] {
+  --text-color: var(--color-white);
+  --section-title-color: var(--color-white);
+  background: var(--color-black);
+  --button-color: var(--color-white);
+}
+
 .visually-hidden {
   display: none;
+}
+
+.card-category,
+.section-tagline {
+  color: var(--color-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-title);
+  font-weight: var(--font-weight-bold);
+}
+
+.navbar-menu {
+  float: right;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.nav .nav-item {
+  font-family: var(--nav-item-font-family);
+  font-weight: var(--nav-item-font-weight);
+  font-size: var(--nav-item-font-size);
+  letter-spacing: var(--nav-item-letter-spacing);
+  display: var(--nav-item-display);
+  margin: var(--nav-item-margin);
+}
+
+.nav .nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.nav .nav-link:hover {
+  color: var(--nav-item-link-hover);
 }
 
 .section {
@@ -412,14 +487,25 @@ a:active {
   padding: var(--section-body-padding);
 }
 
+.card-services .card-title {
+  margin: 0;
+}
+
+.card-services a {
+  display: block;
+  padding: 2rem;
+  background-color: var(--color-light-grey);
+}
+
+.card-services a:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  text-decoration: none;
+}
+
 .section-footer {
   padding: var(--section-footer-padding);
   text-align: var(--section-footer-align);
-}
-
-.card-category,
-.section-tagline {
-  color: var(--color-primary);
 }
 
 .section-title {
@@ -443,53 +529,15 @@ a:active {
   margin-left: auto;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-family-title);
-  font-weight: var(--font-weight-bold);
-}
-
-.footer {
-  padding: var(--footer-padding);
-}
-
-.navbar-menu {
-  float: right;
-}
-
-.nav {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  list-style: none;
-}
-
-.nav .nav-item {
-  font-family: var(--nav-item-font-family);
-  font-weight: var(--nav-item-font-weight);
-  font-size: var(--nav-item-font-size);
-  letter-spacing: var(--nav-item-letter-spacing);
-  display: var(--nav-item-display);
-  margin: var(--nav-item-margin);
-}
-
-.nav .nav-link {
-  display: block;
-  padding: 0.5rem 1rem;
-}
-
-.nav .nav-link:hover {
-  color: var(--nav-item-link-hover);
-}
-
 ul.row {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+[class^="col-"] {
+  float: left;
+  padding: 0.5rem;
 }
 
 .col-1-3 {
@@ -499,17 +547,6 @@ ul.row {
 .col-1-2 {
   width: 50%;
 }
-
-.footer-copyright {
-  margin: 0;
-  font-size: var(--font-size-small);
-  color: var(--text-color);
-}
-
-.footer ul {
-  text-align: right;
-}
-
 
 /* 
   **************** Clear the context of the grid ****************
@@ -521,58 +558,28 @@ ul.row {
   clear: both; /*do not allow any floating elements on either side*/
 }
 
-/* Select all classes that start with col- */
-[class^="col-"] {
-  float: left;
-  padding: 0.5rem; /* half of the root element's padding, adjust as needed */
+.footer {
+  padding: var(--footer-padding);
 }
 
-/* Add a dark theme to sections */
-[data-section-theme="dark"] {
-  --text-color: var(--color-white);
-  --section-title-color: var(--color-white);
-  background: var(--color-black);
+.footer ul {
+  text-align: right;
 }
 
-.footer-address  {
-    color: var(--text-color);  
+.footer-address {
+  color: var(--text-color);
 }
 
 .social-link {
-    display: block;
+  display: block;
 }
 
 .social-link > svg {
-    fill: var(--text-color);
+  fill: var(--text-color);
 }
 
-.card-services .card-title {
-    margin: 0;
-}
-
-.card-services a {
-    display: block;
-    padding: 2rem;
-    background-color: var(--color-light-grey);
-}
-
-.card-services a:hover {
-    color: var(--color-white);
-    background: var(--color-primary);
-    text-decoration: none;
-}
-
-.button {
-  display: var(--button-display);
-  padding: var(--button-padding);
-  border: var(--button-border);
-  font-size: var(--button-font-size);
-  color: var(--button-color);
-  text-decoration: var(--button-text-decoration);
-}
-
-.button:hover {
-  color: var(--button-hover-color);
-  text-decoration: var(--button-hover-text-decoration);
-  background-color: var(--button-hover-background);
+.footer-copyright {
+  margin: 0;
+  font-size: var(--font-size-small);
+  color: var(--text-color);
 }
