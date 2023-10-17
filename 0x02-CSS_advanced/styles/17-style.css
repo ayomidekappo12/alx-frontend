@@ -395,6 +395,7 @@ a:active {
 
 .section-header {
   padding: var(--section-header-padding);
+  text-align: var(--section-header-align);
 }
 
 .section-body {
@@ -404,10 +405,6 @@ a:active {
 .section-footer {
   padding: var(--section-footer-padding);
   text-align: var(--section-footer-align);
-}
-
-.section-header {
-  text-align: var(--section-header-align);
 }
 
 .card-category,
