@@ -351,7 +351,7 @@ template {
   --nav-item-letter-spacing: 0.04rem;
   --nav-item-display: inline-block;
   --nav-item-margin: 0 0 3rem;
-  --nav-item-link-hover: var(--color-primary);
+  --nav-item-link-hover: var(--color-white);
   --section-tagline-margin: 0;
   --button-display: inline-block;
   --button-padding: 1.5rem 3rem;
@@ -477,7 +477,7 @@ h6 {
 }
 
 .nav .nav-link:hover {
-  color: var(--color-white);
+  color: var(--nav-item-link-hover);
 }
 
 .nav .nav-link::before {
@@ -528,7 +528,7 @@ h6 {
   padding: var(--section-footer-padding);
   text-align: var(--section-footer-align);
 }
-AOA
+
 .section-title {
   font-family: var(--font-family-title);
   font-size: var(--font-size-xx-large);
